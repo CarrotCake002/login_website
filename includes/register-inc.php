@@ -29,7 +29,6 @@ if (isset($_POST['submit'])) {
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $rowCount = mysqli_stmt_num_rows($stmt);
-
             if ($rowCount > 0) {
                 header("Location: ../register.php?error=usernametaken");
                 exit();
@@ -41,10 +40,9 @@ if (isset($_POST['submit'])) {
                     exit();
                 } else {
                     $hashedPass = password_hash($password, PASSWORD_BCRYPT);
-
                     mysqli_stmt_bind_param($stmt, "ss", $username, $hashedPass);
                     mysqli_stmt_execute($stmt);
-                    header("Location: ../register.php?success=registered");
+                    header("Location: ../index.php?success=registered");
                     exit();
                 }
             }

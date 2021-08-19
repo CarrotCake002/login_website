@@ -1,5 +1,10 @@
 <?php
 
+require __DIR__ . '/../classes/captchaClass.php';
+$captcha = new classes\captcha();
+$captcha->checkResponse();
+
+// data submission for DB
 if (isset($_POST['submit'])) {
     //Connect to DB
     require 'database.php';

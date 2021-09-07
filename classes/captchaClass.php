@@ -19,3 +19,11 @@
         }
 
     }
+
+    /*
+    *
+    * Try to apply it to the whole website using ajax
+    * and doing the request from the main page with ajax
+    * instead of from a form
+    *
+    */
